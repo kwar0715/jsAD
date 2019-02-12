@@ -5,11 +5,11 @@ const { HEADER } = require("../constants");
 const configObject = getConfig();
 
 const loginUrl = `https://login.microsoftonline.com/${
-  configObject.ad_id
+  configObject.tenent_id
 }/oauth2/v2.0/token`;
 
 const tokenRefreshUrl = `https://login.microsoftonline.com/${
-  configObject.ad_id
+  configObject.tenent_id
 }/oauth2/v2.0/token`;
 
 exports.authenticate = async function(username, password) {

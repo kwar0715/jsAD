@@ -1,4 +1,5 @@
 language: node_js
+
 script: echo "npm test temporarily disabled"
 deploy:
   provider: npm
@@ -7,3 +8,4 @@ deploy:
   skip_cleanup: true
 on: 
   all_branches: true
+  tags: true

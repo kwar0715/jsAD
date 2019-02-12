@@ -1,6 +1,6 @@
 language: node_js
 deploy:
   provider: npm
-  email: "harith.13@itfac.mrt.ac.lk"
-  api_key: "b92e43d5-7f6b-44ce-878d-3de6837242a7"
+  email: EMAIL
+  api_key: API_KEY
 

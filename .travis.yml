@@ -1,7 +1,7 @@
 language: node_js
 
 script: echo "npm test temporarily disabled"
-before_deploy: $NPM_EMAIL
+before_deploy: NPM_EMAIL
 deploy:
   provider: npm
   email: "$NPM_EMAIL"

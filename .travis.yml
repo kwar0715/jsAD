@@ -5,7 +5,6 @@ deploy:
   provider: npm
   email: EMAIL
   api_key: API_KEY
-  skip_cleanup: true
 on: 
   all_branches: true
   tags: true

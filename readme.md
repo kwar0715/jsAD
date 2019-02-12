@@ -47,7 +47,7 @@ try {
 AD client token will expires the 3600 s and this will reauthenticate by the refresh token given by authentication
 
 ```
-const { authenticate, refreshByToken } = require("./index");
+const { authenticate, refreshByToken } = require("jsad");
 
 try {
     const auth = await authenticate(

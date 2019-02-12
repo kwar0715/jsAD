@@ -4,7 +4,10 @@ Node js library for microsoft active directory
 
 ## installation
 
+by npm :
 `npm install jsad`
+
+by yarn :
 `yarn add jsad`
 
 ## Configure

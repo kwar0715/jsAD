@@ -1,6 +1,6 @@
 # JSAD - Active Directory Library
 
-Node js library for microsoft active directory
+Open Source Node js library for microsoft active directory
 
 ## installation
 

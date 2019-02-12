@@ -1,10 +1,9 @@
 language: node_js
 
 script: echo "npm test temporarily disabled"
-before_deploy: echo "$SECRET_KEY"
 deploy:
   provider: npm
-  email: "$NPM_EMAIL"
-  api_key: "$NPM_TOKEN"
+  email: "harith.13@itfac.mrt.ac.lk"
+  api_key: "d146c65b-23d7-4726-b301-99c7f1a3b453"
   on:
     branch: master

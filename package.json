@@ -1,0 +1,32 @@
+{
+  "name": "jsad",
+  "version": "1.0.0",
+  "description": "node library for microsoft active directory integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kwar0715/jsAD.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "js",
+    "active",
+    "directory",
+    "ad"
+  ],
+  "author": "kolitha warnakulasooriya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwar0715/jsAD/issues"
+  },
+  "homepage": "https://github.com/kwar0715/jsAD#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "qs": "^6.6.0"
+  }
+}

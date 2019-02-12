@@ -4,8 +4,7 @@
   "description": "node library for microsoft active directory integration",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "node dev.js"
+     "test": "node dev.js"
   },
   "repository": {
     "type": "git",

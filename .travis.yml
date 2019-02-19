@@ -7,8 +7,18 @@ node_js:
 branches:
   only:
     - master
+    
+install:
+  - npm install
+
+script:
+  - npm test
+    
+before_deploy:
+- npm version patch
+
 deploy:
-  provider: npm
+  provider: releases
   email: harith.13@itfac.mrt.ac.lk
   api_key: d146c65b-23d7-4726-b301-99c7f1a3b453
   on:

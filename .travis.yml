@@ -18,9 +18,10 @@ before_deploy:
 - npm version patch
 
 deploy:
-  provider: releases
+  provider: npm
   email: harith.13@itfac.mrt.ac.lk
-  api_key: d146c65b-23d7-4726-b301-99c7f1a3b453
+  api_key: 
+    secure: 1b80ba18-80be-4cff-8184-2c704003a3a6
   on:
     branch: master
 

@@ -1,5 +1,8 @@
 language: node_js
 
+node_js:
+  - "9"
+  
 #script: echo "npm test temporarily disabled"
 branches:
   only:

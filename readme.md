@@ -10,69 +10,56 @@ by npm :
 by yarn :
 `yarn add jsad`
 
-## Configure
+## Create Connection
 
-create jsad-config.json file in your root directory.
+Create Active Directory Connection.
 
 ```
-{
-   "jsAD": {
-    "client_id": <client id>,
-    "client_secret": <client secret>,
-    "tenent_id": <tenent id>
-  }
-}
+const connection = jsAD.createConnection({
+  client_id: <AD_CLIENT_ID>,
+  client_secret: <AD_CLIENT_SECRET>,
+  tenent_id: <TENENT_ID>
+});
+
 ```
 
 ## Usage
 
 ### Aauthentication
 
-authenticate function can authenticate using username and password
+Authenticate function can authenticate using username and password
 
 ```
-const { authenticate } = require("jsad");
+const auth = await connection.authenticate(
+      username,
+      password
+    );
 
-try {
-  const auth = await authenticate(
-  username,
-  password
-);
-} catch (error) {
-}
 ```
 
-### Refresh token
+### Revoke Token
 
 AD client token will expires the 3600 s and this will reauthenticate by the refresh token given by authentication
 
 ```
-const { authenticate, refreshByToken } = require("jsad");
-
-try {
-    const auth = await authenticate(
-    username,
-    password
-);
-await refreshByToken(auth.refresh_token);
-} catch (error) {
-}
-```
-
-### Get profile information
-
-get profile information of logged user.
+const reauth = await connection.revokeToken(auth);
 
 ```
-const { authenticate ,getProfileInfo} = require("jsad");
-try {
-  const auth = await authenticate(
-  username,
-  password
-  );
- const profile = await getProfileInfo(auth);
-} catch (error) {
-}
+
+### Get Profile Information
+
+Get profile information of logged user.
+
+```
+const profile = await connection.getProfile(auth);
+```
+
+### Get Profile Name
+
+Get permitted profile name of logged user
+
+```
+const profilename = await connection.getProfilePermissionName(auth);
 ```
 
 ## Methods
@@ -80,3 +67,8 @@ try {
 1. authenticate(username,password): return auth response
 2. refreshByToken(refreshToken: refresh token in auth object): auth response
 3. getProfileInfo(auth: authentication object): return profile information object
+4. getProfilePermissionName(auth: authentication object): return permitted profile name
+
+## Resources
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/

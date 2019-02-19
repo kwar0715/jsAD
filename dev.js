@@ -7,10 +7,12 @@ const connection = jsAD.createConnection({
   tenent_id: process.env.AD_TENENT_ID
 });
 
+let auth;
+
 (async () => {
   // authenticate
   try {
-    const auth = await connection.authenticate(
+    auth = await connection.authenticate(
       process.env.NETWORK_EMAIL,
       process.env.NETWORK_PASS
     );
@@ -20,10 +22,6 @@ const connection = jsAD.createConnection({
   }
   // reauth by token
   try {
-    const auth = await connection.authenticate(
-      process.env.NETWORK_EMAIL,
-      process.env.NETWORK_PASS
-    );
     const reauth = await connection.revokeToken(auth);
     console.log(`Re Auth By Token ---- ${JSON.stringify(reauth)}`);
   } catch (error) {
@@ -32,10 +30,6 @@ const connection = jsAD.createConnection({
 
   // get profile info
   try {
-    const auth = await connection.authenticate(
-      process.env.NETWORK_EMAIL,
-      process.env.NETWORK_PASS
-    );
     const profile = await connection.getProfile(auth);
     console.log(`Profile ---- ${JSON.stringify(profile)}`);
   } catch (error) {
@@ -44,10 +38,6 @@ const connection = jsAD.createConnection({
 
   // get profile name
   try {
-    const auth = await connection.authenticate(
-      process.env.NETWORK_EMAIL,
-      process.env.NETWORK_PASS
-    );
     const profile = await connection.getProfilePermissionName(auth);
     console.log(`Profile Name ---- ${JSON.stringify(profile)}`);
   } catch (error) {

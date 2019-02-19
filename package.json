@@ -4,7 +4,7 @@
   "description": "node library for microsoft active directory integration",
   "main": "index.js",
   "scripts": {
-    "test": "node dev.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,14 @@
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",
     "qs": "^6.6.0"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

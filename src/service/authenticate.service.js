@@ -1,4 +1,5 @@
 const { oauth } = require("../api/authentication.api");
+const ADError = require("../utils/error");
 
 exports.authenticate = async function(opts) {
   const body = {
@@ -9,7 +10,12 @@ exports.authenticate = async function(opts) {
     password: opts.password,
     scope: "user.read offline_access"
   };
-  return await oauth(body, opts.tenent_id);
+  try {
+    const response = await oauth(body, opts.tenent_id);
+    return response.json();
+  } catch (error) {
+    throw new ADError("Authentication Error", error);
+  }
 };
 
 exports.revokeToken = async function(opts) {
@@ -19,5 +25,10 @@ exports.revokeToken = async function(opts) {
     grant_type: "refresh_token",
     refresh_token: opts.refresh_token
   };
-  return await oauth(body, opts.tenent_id);
+  try {
+    const response = await oauth(body, opts.tenent_id);
+    return response.json();
+  } catch (error) {
+    throw new ADError("Revoke Token Error", error);
+  }
 };

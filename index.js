@@ -1,6 +1,6 @@
 const _ = require("lodash");
-const auth = require("./service/authenticate.service");
-const profile = require("./service/profile.service");
+const auth = require("./src/service/authenticate.service");
+const profile = require("./src/service/profile.service");
 
 const Connection = function(opts) {
   opts = _.defaults(opts || {}, {

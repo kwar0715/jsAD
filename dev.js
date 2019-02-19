@@ -8,39 +8,39 @@ const connection = jsAD.createConnection({
 });
 
 (async () => {
-  // // authenticate
-  // try {
-  //   const auth = await connection.authenticate(
-  //     process.env.NETWORK_EMAIL,
-  //     process.env.NETWORK_PASS
-  //   );
-  //   console.log(`Authentication ---- ${JSON.stringify(auth)}`);
-  // } catch (error) {
-  //   console.log(`Authentication Error ---- ${JSON.stringify(error)}`);
-  // }
-  // // reauth by token
-  // try {
-  //   const auth = await connection.authenticate(
-  //     process.env.NETWORK_EMAIL,
-  //     process.env.NETWORK_PASS
-  //   );
-  //   const reauth = await connection.revokeToken(auth);
-  //   console.log(`Re Auth By Token ---- ${JSON.stringify(reauth)}`);
-  // } catch (error) {
-  //   console.log(`Re Auth By Token Error ---- ${JSON.stringify(error)}`);
-  // }
+  // authenticate
+  try {
+    const auth = await connection.authenticate(
+      process.env.NETWORK_EMAIL,
+      process.env.NETWORK_PASS
+    );
+    console.log(`Authentication ---- ${JSON.stringify(auth)}`);
+  } catch (error) {
+    console.log(`Authentication Error ---- ${JSON.stringify(error)}`);
+  }
+  // reauth by token
+  try {
+    const auth = await connection.authenticate(
+      process.env.NETWORK_EMAIL,
+      process.env.NETWORK_PASS
+    );
+    const reauth = await connection.revokeToken(auth);
+    console.log(`Re Auth By Token ---- ${JSON.stringify(reauth)}`);
+  } catch (error) {
+    console.log(`Re Auth By Token Error ---- ${JSON.stringify(error)}`);
+  }
 
-  // // get profile info
-  // try {
-  //   const auth = await connection.authenticate(
-  //     process.env.NETWORK_EMAIL,
-  //     process.env.NETWORK_PASS
-  //   );
-  //   const profile = await connection.getProfile(auth);
-  //   console.log(`Profile ---- ${JSON.stringify(profile)}`);
-  // } catch (error) {
-  //   console.log(`Profile Error ---- ${JSON.stringify(error)}`);
-  // }
+  // get profile info
+  try {
+    const auth = await connection.authenticate(
+      process.env.NETWORK_EMAIL,
+      process.env.NETWORK_PASS
+    );
+    const profile = await connection.getProfile(auth);
+    console.log(`Profile ---- ${JSON.stringify(profile)}`);
+  } catch (error) {
+    console.log(`Profile Error ---- ${JSON.stringify(error)}`);
+  }
 
   // get profile name
   try {

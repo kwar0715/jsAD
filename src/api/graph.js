@@ -7,14 +7,9 @@ exports.getGraph = async function(authentication, urlparams) {
   const header = Object.assign(GRAPH_HEADER, {
     Authorization: `Bearer ${authentication.access_token}`
   });
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: header
-    });
 
-    return response.json();
-  } catch (error) {
-    throw new Error(`graph error $${JSON.stringify(error)}`);
-  }
+  return await fetch(url, {
+    method: "GET",
+    headers: header
+  });
 };

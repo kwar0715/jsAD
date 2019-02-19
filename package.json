@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/kwar0715/jsAD#readme",
   "dependencies": {
-    "path": "^0.12.7",
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",
     "qs": "^6.6.0"

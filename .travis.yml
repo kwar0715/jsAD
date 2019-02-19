@@ -13,9 +13,6 @@ install:
 
 script:
   - npm test
-    
-before_deploy:
-- npm version patch
 
 deploy:
   provider: npm
